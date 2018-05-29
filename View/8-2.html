@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>模版页面</title>
+		<link rel="stylesheet" href="../Themes/Plugs/Bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="../Themes/Plugs/FontAwesome/css/font-awesome.css">
+		<link rel="stylesheet" href="../Themes/Plugs/Swiper/css/swiper.css">
+		<link rel="stylesheet" href="../Themes/CSS/Base.css">
+		<style type="text/css">
+			.main {
+				min-height: 1800px;
+			}
+			
+			.div-one {
+				width: 640px;
+				height: 400px;
+				border: 1px solid #ccc;
+				background-color: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<!-- header -->
+			<div class="header">
+
+			</div>
+
+			<!-- main -->
+			<div class="main">
+				<div class="container">
+					<div class="row">
+						<div class="box-con">
+							<button type="button" class="yc btn btn-primary">隐藏</button>
+							<button type="button" class="xs btn btn-primary">显示</button>
+							<button type="button" class="tmd btn btn-primary">透明度</button>
+							<button type="button" class="qh btn btn-primary">切换</button>
+							<button type="button" class="zdy btn btn-primary">定义特效</button>
+							<button type="button" class="gd btn btn-primary">滚动</button>
+							<button type="button" class="gdh btn btn-primary">滚动画</button>
+							<div class="div-one"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- footer -->
+			<div class="footer">
+
+			</div>
+		</div>
+
+		<!-- JS -->
+		<script src="../Themes/JS/JQuery/jquery.min1.9.1.js"></script>
+		<script src="../Themes/Plugs/Bootstrap/js/bootstrap.js"></script>
+		<script src="../Themes/Plugs/Swiper/js/swiper.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>-->
+		<script>
+			$(function() {
+				//隐藏
+				$(".yc").on("click", function() {
+					$(".div-one").fadeOut();
+				})
+				//显示
+				$(".xs").on("click", function() {
+					$(".div-one").fadeIn();
+				})
+				//透明度
+				$(".tmd").on("click", function() {
+					$(".div-one").fadeTo(1000, .5);
+				})
+				//切换
+				$(".qh").on("click", function() {
+					$(".div-one").fadeToggle();
+				})
+				//自定义
+				$(".zdy").on("click", function() {
+					$(".div-one").animate({
+						width: 900,
+						height: 800,
+					})
+				})
+				//获取滚动条高度
+				//var sc = $("html,body").scrollTop(500);
+				//console.log(sc);
+				$(".gd").on("click", function() {
+					//					$(".div-one").animate({
+					//						
+					//					})
+					$("html,body").scrollTop(500);
+				})
+
+				$(".gdh").on("click", function() {
+					$("html,body").animate({
+						scrollTop:500
+					},1000)
+				})
+
+			})
+		</script>
+
+	</body>
+
+</html>
