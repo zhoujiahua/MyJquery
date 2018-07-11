@@ -39,7 +39,7 @@
     <script src="../Themes/Plugs/Swiper/js/swiper.js"></script>
     <script>
         var str = "ase124234h343uy234534fa4534h4464646d4d56d456d4564a654a4SS4DAS";
-        getStr(str);
+        getStr(str)
         //字符串中数字查找返回为数组
         function getStr(params) {
             var arr = [];
@@ -59,11 +59,15 @@
                 arr.push(temp);
                 temp = "";
             }
-
             console.log(arr);
             return arr;
         }
-
+        
+        /* 正则表达式字符串处理 */
+        var oData = "wqe5frs1a5fd1as5f156as1f56asd4f56as4f56we4f56w4er5"
+        var regArr = oData.match(/\d+/g);
+        console.log(regArr);
+        
     </script>
 
 </body>

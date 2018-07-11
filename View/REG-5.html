@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html lang="zh-CN">
 
 <head>
@@ -38,32 +36,19 @@
     <script src="../Themes/Plugs/Bootstrap/js/bootstrap.js"></script>
     <script src="../Themes/Plugs/Swiper/js/swiper.js"></script>
     <script>
-        var str = "ase124234h343uy234534fa4534h4464646d4d56d456d4564a654a4SS4DAS";
-        getStr(str);
-        //字符串中数字查找返回为数组
-        function getStr(params) {
-            var arr = [];
-            var temp = "";
-            for (var i = 0; i < params.length; i++) {
-                if (str.charAt(i) >= "0" && params.charAt(i) <= "9") {
-                    temp += str.charAt(i);
-                } else {
-                    if (temp) {
-                        arr.push(temp);
-                        temp = "";
-                    }
-                }
+        /* 
+            search:正则匹配字符串，如果找到（匹配）就返回当前的位置索引
+            否则返回-1；
 
-            }
-            if (temp) {
-                arr.push(temp);
-                temp = "";
-            }
-
-            console.log(arr);
-            return arr;
-        }
-
+            用法：
+                字符串.search(正则);
+            正则的默认匹配（查找）规则：找到就停止；
+        */
+        var str = "abcdefd";
+        var re  = /d/;
+        var re1 = /g/;
+        console.log(str.search(re));
+        console.log(str.search(re1));
     </script>
 
 </body>

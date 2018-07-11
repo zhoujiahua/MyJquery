@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html lang="zh-CN">
 
 <head>
@@ -15,7 +13,7 @@
 </head>
 
 <body>
-
+    
     <div class="wrapper">
         <!-- header -->
         <div class="header">
@@ -24,7 +22,7 @@
 
         <!-- main -->
         <div class="main">
-
+            
         </div>
 
         <!-- footer -->
@@ -38,31 +36,36 @@
     <script src="../Themes/Plugs/Bootstrap/js/bootstrap.js"></script>
     <script src="../Themes/Plugs/Swiper/js/swiper.js"></script>
     <script>
-        var str = "ase124234h343uy234534fa4534h4464646d4d56d456d4564a654a4SS4DAS";
-        getStr(str);
-        //字符串中数字查找返回为数组
-        function getStr(params) {
+        /* 
+        正则：一种字符串的匹配规则
+            1.正则是一种规则
+            2.正则操作的对象字符创
+            数组
+            var arr = new Arry();
             var arr = [];
-            var temp = "";
-            for (var i = 0; i < params.length; i++) {
-                if (str.charAt(i) >= "0" && params.charAt(i) <= "9") {
-                    temp += str.charAt(i);
-                } else {
-                    if (temp) {
-                        arr.push(temp);
-                        temp = "";
-                    }
-                }
+             对象
+            var  obj = new Object();
+            var  obj = {};
 
-            }
-            if (temp) {
-                arr.push(temp);
-                temp = "";
-            }
+            正则
+            var re = //;
+            var re = new RegExp();
+      
+            test:正则匹配字符串，如果找到（匹配）就返回ture，否则返回false
+            用法：
+            正则.test（字符串） 
+            正则默认匹配是区分大小写的，如果需要不区分大小写加模式修正符i
+        */
+        
+        var str = "abc";
 
-            console.log(arr);
-            return arr;
-        }
+        //默认区分大小写
+        var re = /a/;
+        //模式修正符i
+        var re1 = /B/i;
+        var te = re.test(str);
+        var te1 = re1.test(str);
+        alert(te+"-"+te1);
 
     </script>
 
