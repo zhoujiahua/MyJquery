@@ -207,5 +207,27 @@ if (ViewBag.FileInfo != null && ViewBag.FileInfo.Count > 0) {
             }
         });
     });
+	
+	window.onload = function () {
+			let oLink = $(".detail-link").attr("href"),
+				reg = /^http(s)?:\/\/(.*)\//g,
+				oMatchs = oLink.match(reg),
+				oReturnUrl = oMatchs.length ? oMatchs[0] : "";
+			$(".article-detail-con").find("a").each(function (i,t) {
+				// $(this).attr("href", "");
+				let urlHref = $(this).attr("href"),
+					fileName = urlHref.match(/\/(.*)/g),
+					fileUrl = fileName.length ? fileName[0] : "";
+				if (oReturnUrl) {
+					if (urlHref.indexOf("http") != 0) {
+						let oUrlAdd = oReturnUrl + fileUrl;
+						$(this).attr("href", oUrlAdd);
+						console.log(oUrlAdd);
+					}
+				} else {
+					$(this).remove();
+				}
+			});
+		};
 </script>
 }
